@@ -15,6 +15,6 @@ typedef struct list
 {
 	char *arg;
 	int (*f_arg)();
-} _printf;
+} list_t;
 
 #endif
