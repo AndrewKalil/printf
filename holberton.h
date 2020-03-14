@@ -11,6 +11,11 @@ int string(va_list ap);
 int decimal(va_list ap);
 int integer(va_list ap);
 
+/**
+ * struct list - struct for conversion specifiers
+ * @arg: specifier
+ * @f_arg: function for specifier
+ */
 typedef struct list
 {
 	char *arg;
