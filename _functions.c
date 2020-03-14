@@ -14,7 +14,7 @@ int character(va_list ap)
 
 	_putchar(ch);
 
-	return(1);
+	return (1);
 }
 
 /**
