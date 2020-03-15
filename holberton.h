@@ -1,6 +1,6 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
-#include <stdard.h>
+#include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -16,10 +16,10 @@ int integer(va_list ap);
  * @arg: specifier
  * @f_arg: function for specifier
  */
-typedef struct list
+typedef struct flags
 {
-	char *arg;
+	char *flags;
 	int (*f_arg)();
-} list_t;
+} flags_t;
 
 #endif
