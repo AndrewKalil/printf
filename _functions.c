@@ -63,7 +63,7 @@ int string(va_list ap)
 }
 
 /**
- * decimal - prints numbers decimal
+ * decimal_integer - prints numbers decimal
  * @ap: argument to print
  * Return: number of characters printed in decimal
  */
