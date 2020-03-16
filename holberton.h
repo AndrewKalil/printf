@@ -18,7 +18,7 @@ int decimal_integer(va_list ap);
 typedef struct flags
 {
 	char *flags;
-	int (*f_arg)();
+	int (*f_arg)(va_list list);
 } flags_t;
 
 #endif
