@@ -42,7 +42,7 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 		else
 		{
 			length += print_c(format[i]);
-		} i++;
+		} i++, j = 0;
 	}
 	return (length);
 }
