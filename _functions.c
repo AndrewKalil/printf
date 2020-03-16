@@ -11,16 +11,9 @@
 
 int print_c(char c)
 {
-	if (c != NULL)
 	{
 
 		return (write(1, &c, 1));
-	}
-
-	else
-
-	{
-		return (-1);
 	}
 }
 
