@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 int _printf(const char *format, ...);
-int _putchar(char c);
+int print_c(char c);
 int character(va_list ap);
 int string(va_list ap);
 int decimal(va_list ap);

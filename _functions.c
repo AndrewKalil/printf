@@ -1,4 +1,18 @@
 #include "holberton.h"
+#include <unistd.h>
+
+/**
+ * print_c - writes the character c
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int print_c(char c)
+{
+	return (write(1, &c, 1));
+}
+
 
 /**
  * character - prints character c
@@ -12,7 +26,7 @@ int character(va_list ap)
 
 	ch = va_arg(ap, int);
 
-	_putchar(ch);
+	print_c(ch);
 
 	return (1);
 }
@@ -35,7 +49,7 @@ int string(va_list ap)
 	{
 		for (i = 0; str[i] != '\0'; i++)
 		{
-			_putchar(str[i]);
+			print_c(str[i]);
 		}
 	}
 
