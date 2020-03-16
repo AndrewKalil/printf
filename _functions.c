@@ -68,7 +68,7 @@ int string(va_list ap)
  * Return: number of characters printed in decimal
  */
 
-int decimal(va_list ap)
+int decimal_integer(va_list ap)
 {
 	int n = va_arg(ap, int);
 	int num;

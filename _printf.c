@@ -60,8 +60,8 @@ int _printf(const char *format, ...)
 	flags_t flags[] = {
 		{"c", character},
 		{"s", string},
-		{"d", decimal},
-		{NULL, NULL}
+		{"d", decimal_integer},
+		{"i", decimal_integer}
 	};
 
 	if (format == NULL)
