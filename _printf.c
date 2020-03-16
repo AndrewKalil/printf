@@ -60,7 +60,6 @@ int _printf(const char *format, ...)
 	flags_t flags[] = {
 		{"c", character},
 		{"s", string},
-		{NULL, NULL},
 	};
 
 	if (format == NULL)
