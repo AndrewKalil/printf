@@ -8,6 +8,7 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
+
 int print_c(char c)
 {
 	return (write(1, &c, 1));
@@ -59,4 +60,53 @@ int string(va_list ap)
 	}
 
 		return (i);
+}
+
+/**
+ * decimal - prints numbers decimal
+ * @ap: argument to print
+ * Return: number of characters printed in decimal
+ */
+
+int decimal(va_list ap)
+{
+	int n = va_arg(ap, int);
+	int num;
+	int last = n % 10;
+	int dig;
+	int exp = 1;
+	int i = 1;
+
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
+	{
+		print_c('-');
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
+	}
+	if (num > 0)
+	{
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			dig = num / exp;
+			print_c(dig + '0');
+			num = num - (dig * exp);
+			exp = exp / 10;
+			i++;
+		}
+	}
+
+	print_c(last + '0');
+
+	return (i);
 }
