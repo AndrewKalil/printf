@@ -8,12 +8,11 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int character(va_list ap);
 int string(va_list ap);
-int decimal(va_list ap);
-int integer(va_list ap);
+int decimal_integer(va_list ap);
 
 /**
- * struct list - struct for conversion specifiers
- * @arg: specifier
+ * struct flags - struct for conversion specifiers
+ * @flags: specifier
  * @f_arg: function for specifier
  */
 typedef struct flags
