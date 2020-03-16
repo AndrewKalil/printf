@@ -1,11 +1,13 @@
 #include "holberton.h"
 
 /**
- * _printf - prints arguements passed to it
+ * mini_printf - returns string for _printf
  * @format: list of arguements that ccan be passed
+ * @_list_: contains a list of arguements that will be passed
+ * @_flags_: struct pointer
  * Return: a string
  */
-int mini_printf(const char *format, va_list _list_, flags_t *_flags_ )
+int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 {
 	int i = 0, j = 0, length = 0;
 
@@ -13,6 +15,12 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_ )
 	{
 		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
+		if (format[i] == '%' && format[i + 1] != ' ')
+			if (format[i + 1] == ' ')
+			{
+				while (format[i + 1] == ' ')
+				i++;
+			}
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
 			while (j < 2)
@@ -22,8 +30,7 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_ )
 					length += _flags_[j].f_arg(_list_);
 					i++;
 					break;
-				}
-				j++;
+				} j++;
 			}
 				if (j == 2)
 			{
@@ -38,12 +45,16 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_ )
 		else
 		{
 			length += print_c(format[i]);
-		}
-		i++;
+		} i++;
 	}
 	return (length);
 }
 
+/**
+ * _printf - prints arguements passed to the standard output
+ * @format: list of arguements
+ * Return: length of string
+ */
 int _printf(const char *format, ...)
 {
 	va_list list;
