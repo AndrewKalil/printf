@@ -37,19 +37,19 @@ int _printf(const char *format, ...)
 			}
 			if (id == 0)
 			{
-				_putchar(format[i]);
+				print_c(format[i]);
 				length += 1;
 			}
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
-			_putchar('%');
+			print_c('%');
 			i++;
 			length += 1;
 		}
 		else
 		{
-			_putchar(format[i]);
+			print_c(format[i]);
 			length += 1;
 		}
 		i++;
