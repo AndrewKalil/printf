@@ -11,8 +11,10 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 {
 	int i = 0, j = 0, length = 0;
 
-	while (format && format[i])
+	while (format != NULL && format[i] != '\0')
 	{
+		if (format[i] == '\0')
+			return (-1);
 		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
 		if (format[i] == '%' && (format[i + 1] != '%' || format[i + 1] == ' '))
@@ -33,8 +35,6 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 			}
 			if (j == 4)
 				length += print_c(format[i]);
-			if (format[i] == '\0')
-				break;
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
@@ -44,7 +44,8 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 		else
 		{
 			length += print_c(format[i]);
-		} i++, j = 0;
+		}
+		i++, j = 0;
 	}
 	return (length);
 }
@@ -57,13 +58,13 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int length = 0;
+	int length;
 
 	flags_t flags[] = {
 		{"c", character},
 		{"s", string},
 		{"d", decimal_integer},
-		{"i", decimal_integer}
+		{"i", decimal_integer},
 	};
 
 	if (format == NULL)
