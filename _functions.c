@@ -74,36 +74,35 @@ int string(va_list ap)
 int decimal_integer(va_list ap)
 {
 	int n = va_arg(ap, int);
-	int num;
 	int last = n % 10;
-	int dig;
 	int exp = 1;
 	int i = 1;
+	int number, digt;
 
 	n = n / 10;
-	num = n;
+	number = n;
 
 	if (last < 0)
 	{
 		print_c('-');
-		num = -num;
+		number = -number;
 		n = -n;
 		last = -last;
 		i++;
 	}
-	if (num > 0)
+	if (number > 0)
 	{
-		while (num / 10 != 0)
+		while (number / 10 != 0)
 		{
 			exp = exp * 10;
-			num = num / 10;
+			number = number / 10;
 		}
-		num = n;
+		number = n;
 		while (exp > 0)
 		{
-			dig = num / exp;
-			print_c(dig + '0');
-			num = num - (dig * exp);
+			digt = number / exp;
+			print_c(digt + '0');
+			number = number - (digt * exp);
 			exp = exp / 10;
 			i++;
 		}
