@@ -22,7 +22,7 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 		}
 		if (format[i] == '%' && format[i + 1] != '%')
 		{
-			while (j < 2)
+			while (j < 4)
 			{
 				if (format[i + 1] == _flags_[j].flags[0])
 				{
@@ -31,7 +31,7 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 					break;
 				} j++;
 			}
-			if (j == 2)
+			if (j == 4)
 				length += print_c(format[i]);
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
