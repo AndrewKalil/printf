@@ -49,20 +49,15 @@ int string(va_list ap)
 
 	str = va_arg(ap, char *);
 
-	if (str != NULL)
-	{
-		for (i = 0; str[i] != '\0'; i++)
-		{
-			print_c(str[i]);
-		}
-	}
-
-	else
+	if (str == NULL)
 	{
 		str = "(null)";
 	}
-
-		return (i);
+	for (i = 0; str[i]; i++)
+	{
+		print_c(str[i]);
+	}
+	return (i);
 }
 
 /**
