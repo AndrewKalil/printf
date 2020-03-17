@@ -9,6 +9,7 @@ int print_c(char c);
 int character(va_list ap);
 int string(va_list ap);
 int decimal_integer(va_list ap);
+int binary(va_list ap);
 
 /**
  * struct flags - struct for conversion specifiers
@@ -18,7 +19,7 @@ int decimal_integer(va_list ap);
 typedef struct flags
 {
 	char *flags;
-	int (*f_arg)(va_list list);
+	int (*f_arg)();
 } flags_t;
 
 #endif
