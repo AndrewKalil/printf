@@ -17,7 +17,6 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 			return (-1);
 		if (format[i] == '%' && format[i + 1] == ' ' && !format[i + 2])
 			return (-1);
-
 		if (format[i] == '%' && (format[i + 1] != '%' || format[i + 1] == ' '))
 		{
 			if (format[i + 1] == ' ')
