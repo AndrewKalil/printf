@@ -1,0 +1,53 @@
+.TH man 0 "17 March 2020" "1.0" "_PRINTF MAN PAGE"
+.SH NAME
+_printf - format and print strings, characters or numbers in the standard output
+.SH SYNOPSIS
+.br
+Synstax of function
+.br
+_printf("text %type_of_variable", variable);
+.br
+.br
+.SH PROTOTYPE
+.br
+.br
+int _printf(const char *format, ...)
+
+.SH DESCRIPTION
+This function return a text {char, strings} and numbers {integers, decimal} in the console.
+
+.SS Type of variables that accept in the function:
+.br
+%a - Use this argument if your variable is type char(is oriented to store a number or letter).
+.br
+%s - Use this argument when your variable if a string and you want print in the console using this function.
+.br
+%i - Use this parameter if your variable if type integer and you need or want display in the console.
+.br
+%d - Use this argument if a variable is type decimal and want print the variable in the console.
+.br
+.SH EXAMPLE
+.br
+Print a string:
+.br
+char *string = "working";
+.br
+_printf("The example is %s", string);
+.br
+return (0);
+.br
+.SS Output:
+.br
+The example is working
+.br
+.SS General Formatting:
+.br
+_printf("example format string [ % [ (c) (s) (d) (i) ]]", [variable])
+.br
+.SH SEE ALSO
+printf(1), puts(3), dprintf(3), scanf(3)
+.br
+.SH AUTHOR
+.B Andrew Kalil
+.br
+.B David De La Hoz
