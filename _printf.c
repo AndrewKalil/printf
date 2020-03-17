@@ -33,6 +33,8 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 			}
 			if (j == 4)
 				length += print_c(format[i]);
+			if (format[i] == '\0')
+				break;
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
