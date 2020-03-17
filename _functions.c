@@ -51,15 +51,17 @@ int string(va_list ap)
 
 	if (str != NULL)
 	{
-		for (i = 0; str[i] != '\0'; i++)
+		i = 0;
+
+		while (str[i])
 		{
-			print_c(str[i]);
+			i += print_c(str[i]);
 		}
 	}
 
 	else
 	{
-		str = "(nill)";
+		str = "(null)";
 	}
 
 		return (i);
