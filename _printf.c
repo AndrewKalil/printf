@@ -13,6 +13,8 @@ int mini_printf(const char *format, va_list _list_, flags_t *_flags_)
 
 	while (format && format[i])
 	{
+		if (format[i] == '\0')
+			break;
 		if (format[i] == '%' && format[i + 1] == '\0')
 			return (-1);
 		if (format[i] == '%' && format[i + 1] != ' ')
