@@ -7,8 +7,9 @@ int binary(va_list ap)
 	char arr[100] = {'\0'};
 
 	if (n == 0)
+
 		print_c('0');
-	while (n > 0)
+	while (n != 0)
 	{
 		arr[i] = (n % 2) + '0';
 		n /= 2;
