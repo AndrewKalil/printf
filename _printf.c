@@ -62,7 +62,7 @@ int _printf(const char *format, ...)
 		{"c", character},
 		{"s", string},
 		{"d", decimal_integer},
-		{"i", decimal_integer}
+		{"i", decimal_integer},
 	};
 
 	if (format == NULL)
