@@ -12,3 +12,15 @@ We can also use different types of variables in function, for example:
 ## String
  * Input: `_printf("I %s\n", 'am writing a string');`
  * Output: `I am writing a string`
+
+## Integer
+ * Input: `_printf("The number %i is positive\n", 5);`
+ * Output: `The number 5 is positive`
+
+## Decimal
+ * Input: `_printf("The value of pi is %d\n", 3.1416);`
+ * Output: `The value of pi is 3.1416`
+
+# Author
+ * _David Alfredo De La Hoz Fernandez_
+ * _Andrew Kalil_
